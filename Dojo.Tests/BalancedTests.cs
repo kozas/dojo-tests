@@ -7,7 +7,7 @@ namespace Dojo.Tests
 {
     public class BalancedTests
     {
-        private Balanced sut = new Balanced();
+        private readonly Balanced sut = new Balanced();
 
         [Theory]
         [InlineData("(a + b - c)))", false)]
@@ -23,7 +23,7 @@ namespace Dojo.Tests
         [InlineData("a + b - c", true)]
         [InlineData("(a) + b - c", true)]
         [InlineData("((((a + )b)))( - c)", true)]
-        public void Easy_IsBalanced(string expression, bool expectedResult)
+        public void SingleBraceType_IsBalanced(string expression, bool expectedResult)
         {
             var result = sut.IsBalanced(expression);
 
@@ -44,7 +44,7 @@ namespace Dojo.Tests
         [InlineData("a + b - c[]{}<>()", true)]
         [InlineData("{(a) + b} - [c]", true)]
         [InlineData("((({(a + )}b)))( - [c])", true)]
-        public void Hard_IsBalanced(string expression, bool expectedResult)
+        public void MultipleBraceTypes_IsBalanced(string expression, bool expectedResult)
         {
             var result = sut.IsBalanced(expression);
 
