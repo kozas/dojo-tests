@@ -42,6 +42,7 @@ namespace Dojo.Tests
         [InlineData("(a + b)} - c", false)]
         [InlineData("(a + b()< - c", false)]
         [InlineData("a + )b[ - c", false)]
+        [InlineData("<<))", false)]
         [InlineData("<(a + )b[( - c)]>", true)]
         [InlineData("{[(a)]} + (b)( - c)", true)]
         [InlineData("({(a + )b( - c)})", true)]
