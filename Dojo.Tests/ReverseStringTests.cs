@@ -19,7 +19,7 @@ namespace Dojo.Tests
         [InlineData("123456789", "987654321")]
         [InlineData("Hello", "olleH")]
         [InlineData("Hard work and training. There's no secret formula.", ".alumrof terces on s'erehT .gniniart dna krow draH")]
-        public void SingleBraceType_IsBalanced(string expression, string expectedResult)
+        public void ReverseString(string expression, string expectedResult)
         {
             var result = sut.Reverse(expression);
 
