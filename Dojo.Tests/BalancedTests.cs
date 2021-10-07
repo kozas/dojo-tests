@@ -1,13 +1,17 @@
-using System;
 using Dojo.Rooms;
 using Shouldly;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Dojo.Tests
 {
-    public class BalancedTests
+    public class BalancedTests : TestBase
     {
-        private readonly Balanced sut = new Balanced();
+        private readonly Balanced sut = new();
+
+        public BalancedTests(ITestOutputHelper output) : base (output)
+        {
+        }
 
         [Theory]
         [InlineData("(a + b - c)))", false)]
@@ -27,7 +31,7 @@ namespace Dojo.Tests
         {
             var result = sut.IsBalanced(expression);
 
-            result.ShouldBe(expectedResult);
+            result.ShouldBe(expectedResult, expression);
         }
 
         [Theory]
@@ -48,7 +52,7 @@ namespace Dojo.Tests
         {
             var result = sut.IsBalanced(expression);
 
-            result.ShouldBe(expectedResult);
+            result.ShouldBe(expectedResult, expression);
         }
     }
 }
