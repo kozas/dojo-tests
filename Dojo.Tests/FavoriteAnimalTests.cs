@@ -1,6 +1,4 @@
 ﻿using Dojo.Rooms;
-using System;
-using System.Linq;
 using Shouldly;
 using Xunit;
 using Xunit.Abstractions;
