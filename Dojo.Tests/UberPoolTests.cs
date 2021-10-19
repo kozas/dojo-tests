@@ -40,6 +40,12 @@ namespace Dojo.Tests
 
         [Theory]
         [InlineData(new[] { 1, 30, 2, 3, 5, 3, 5, 9, 3 }, 6, true)]
+        [InlineData(new[] { 1, 30, 2, 3, 30, 3, 5, 9, 1 }, 6, true)]
+        [InlineData(new[] { 0, 30, 10 }, 10, true)]
+        [InlineData(new[] { 0, 30, 10,30, 31, 5 }, 10, true)]
+        [InlineData(new[] { 1, 30, 2, 3, 6, 3, 5, 9, 3 }, 8, true)]
+        [InlineData(new[] { 0, 30, 10 }, 6, false)]
+        [InlineData(new[] { 1, 30, 2, 3, 6, 3, 5, 9, 3 }, 6, false)]
         public void Process(int[] trips, int capacity, bool expectedResult)
         {
             var multiDimensionalArray = trips.ToMultiDimensionalArray(3);
