@@ -22,7 +22,7 @@ namespace Dojo.Tests
             [[1,2],[3,4],[5,6]]
          */
 
-        private readonly MultiDimensionalArray sut = new();
+        //private readonly MultiDimensionalArray sut = new();
         
         public MultiDimensionalArrayTests(ITestOutputHelper output) : base(output)
         {
@@ -34,7 +34,7 @@ namespace Dojo.Tests
         [InlineData(new[] { 1, 2, 3, 4, 5, 6, 7, 8 }, 4)]
         public void Process(int[] numbers, int columnCount)
         {
-            var result = sut.Process(numbers, columnCount);
+            //var result = sut.Process(numbers, columnCount);
             var rowCount = numbers.Length / columnCount;
             var valueIndex = 0;
 
@@ -42,7 +42,7 @@ namespace Dojo.Tests
             {
                 for (int columnIndex = 0; columnIndex < columnCount; columnIndex++)
                 {
-                    result[rowIndex, columnIndex].ShouldBe(numbers[valueIndex]);
+                    //result[rowIndex, columnIndex].ShouldBe(numbers[valueIndex]);
                     valueIndex++;
                 }
             }

@@ -42,6 +42,7 @@ namespace Dojo.Tests
         [InlineData(new[] { 1, 30, 2, 3, 5, 3, 5, 9, 3 }, 6, true)]
         [InlineData(new[] { 1, 30, 2, 3, 30, 3, 5, 9, 1 }, 6, true)]
         [InlineData(new[] { 1, 30, 2, 1, 30, 3 }, 6, true)]
+        [InlineData(new[] { 1, 30, 2, 1, 30, 6 }, 6, false)]
         [InlineData(new[] { 0, 30, 10 }, 10, true)]
         [InlineData(new[] { 0, 0, 10, 1, 1, 10 }, 10, true)]
         [InlineData(new[] { 0, 30, 10, 30, 31, 5 }, 10, true)]

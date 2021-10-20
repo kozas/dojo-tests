@@ -44,9 +44,9 @@ namespace Dojo.Tests
         [InlineData("bbbbbbaaattt", "ball", false)]
         public void StuckKeyboard(string typed, string target, bool expectedResult)
         {
-            //bool result = sut.Process(typed,target);
+            bool result = sut.Process(typed, target);
 
-            //result.ShouldBe(expectedResult, $"Typed: {typed} Target{target}");
+            result.ShouldBe(expectedResult, $"Typed: {typed} Target{target}");
         }
     }
 }

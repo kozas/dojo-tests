@@ -50,9 +50,9 @@ namespace Dojo.Tests
         {
             var multiDimensionalArray = operations.ToMultiDimensionalArray(3);
 
-            //int[] result = sut.Process(numbers: numbers, operations: multiDimensionalArray);
+            int[] result = sut.Process(numbers: numbers, operations: multiDimensionalArray);
 
-            //result.ShouldBe(expectedResult);
+            result.ShouldBe(expectedResult);
         }
     }
 }
