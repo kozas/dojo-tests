@@ -28,10 +28,19 @@ namespace Dojo.Tests
         }
 
         [Theory]
+        [InlineData("aaaa", "a", true)]
         [InlineData("aaaabcccc", "abc", true)]
         [InlineData("ccaaaaaat", "cat", true)]
+        [InlineData("cat", "cat", true)]
         [InlineData("mmmoooo", "moo", true)]
+        [InlineData("mmmoooo", "mooo", true)]
+        [InlineData("mmmoooo", "moooo", true)]
+        [InlineData("mmmoooonn", "moon", true)]
+        [InlineData("aaaab", "a", false)]
         [InlineData("abc", "ab", false)]
+        [InlineData("abccccccc", "ab", false)]
+        [InlineData("ab", "abc", false)]
+        [InlineData("fbbbbbbaaattt", "ball", false)]
         [InlineData("bbbbbbaaattt", "ball", false)]
         public void StuckKeyboard(string typed, string target, bool expectedResult)
         {
