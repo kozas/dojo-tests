@@ -48,12 +48,7 @@ namespace Dojo.Tests
         [InlineData(new int[]{7,3,1,-10,3}, new int[]{ 0, 0, 3, 1, 3, 2, 2, 3, 5 }, new int[]{ 10, 5, 8, -3, 3 })]
         public void RangeUpdate(int[] numbers, int[] operations, int[] expectedResult)
         {
-            var multiDimensionalArray = new int[,]
-            {
-                { operations[0], operations[1], operations[2] },
-                { operations[3], operations[4], operations[5] },
-                { operations[6], operations[7], operations[8] }
-            };
+            var multiDimensionalArray = operations.ToMultiDimensionalArray(3);
 
             //int[] result = sut.Process(numbers: numbers, operations: multiDimensionalArray);
 
